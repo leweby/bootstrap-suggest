@@ -88,6 +88,7 @@ var users = [
   {username: 'twbs', fullname: 'Twitter Bootstrap'},
   {username: 'john', fullname: 'John Doe'},
   {username: 'jane', fullname: 'Jane Doe'},
+ 
 ];
 ```
 
@@ -215,7 +216,16 @@ $('#comment').suggest('@', {
             {username: 'twbs', fullname: 'Twitter Bootstrap'},
             {username: 'john', fullname: 'John Doe'},
             {username: 'jane', fullname: 'Jane Doe'},
+             {username: 'jean-baptite', fullname: 'JBane Doe'},
           ];
+          
+          // data
+          var applications = [
+            {id: 'dsit-etudes-gfi-gima', libelle: 'GFI - GIMA'},
+            {id: 'dsit-etudes-web-symfony-rh', libelle: 'Web-symfony'},
+            {id: 'dsit-etudes-bar', libelle: 'Bar User'},
+          ];
+          
 
           $('#comment').suggest('@', {
             data: users,
@@ -223,6 +233,16 @@ $('#comment').suggest('@', {
               return {
                 value: user.username,
                 text: '<strong>'+user.username+'</strong> <small>'+user.fullname+'</small>'
+              }
+            }
+          })
+          
+           $('#comment').suggest('#', {
+            data: applications,
+            map: function(application) {
+              return {
+                value: application.id,
+                text: '<strong>'+application.id+'</strong> <small>'+application.libelle+'</small>'
               }
             }
           })
