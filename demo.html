@@ -227,7 +227,7 @@ $('#comment').suggest('@', {
           ];
           
 
-          $('#comment').suggest('@', {
+          $('#comment').suggest('#', {
             data: users,
             map: function(user) {
               return {
@@ -237,7 +237,7 @@ $('#comment').suggest('@', {
             }
           })
           
-           $('#comment').suggest('#', {
+           $('#comment').suggest('@', {
             data: applications,
             map: function(application) {
               return {
